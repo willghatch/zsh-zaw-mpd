@@ -1,8 +1,8 @@
-# zaw source for mpc -- current playlist
+# zaw source for mpd -- current playlist
 
 ZAW_MPC_COMMAND=${ZAW_MPC_COMMAND:-mpc}
 
-function zaw-src-mpc-current-playlist() {
+function zaw-src-mpd-current-playlist() {
     local buf
     buf=$($=ZAW_MPC_COMMAND playlist)
     if [[ $? != 0 ]]; then
@@ -21,5 +21,5 @@ zaw-mpc-del-song-from-playlist(){
     $=ZAW_MPC_COMMAND del $1
 }
 
-zaw-register-src -n mpc-current-playlist zaw-src-mpc-current-playlist
+zaw-register-src -n mpd-current-playlist zaw-src-mpd-current-playlist
 

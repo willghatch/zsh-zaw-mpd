@@ -1,8 +1,8 @@
-# zaw source for mpc -- all playlists
+# zaw source for mpd -- all playlists
 
 ZAW_MPC_COMMAND=${ZAW_MPC_COMMAND:-mpc}
 
-function zaw-src-mpc-playlists() {
+function zaw-src-mpd-playlists() {
     local buf
     buf=$($=ZAW_MPC_COMMAND lsplaylists)
     if [[ $? != 0 ]]; then
@@ -25,5 +25,5 @@ zaw-mpc-rm-playlist(){
     $=ZAW_MPC_COMMAND rm $1
 }
 
-zaw-register-src -n mpc-playlists zaw-src-mpc-playlists
+zaw-register-src -n mpd-playlists zaw-src-mpd-playlists
 
